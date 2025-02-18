@@ -1,0 +1,22 @@
+class vehicle:
+    def __init__(self, make, model):
+        self.make=make
+        self.model=model
+    def describe (self):
+        return f"vehicle make : {self.make} , vehicle model; {self.model}"
+class car(vehicle):
+    def __init__(self, make, model, num_doors):
+        super().__init__(make, model)
+        self._num_doors=num_doors
+    def describe(self):
+        return f"car make : {self.make} , car model : {self.model} , car num_doors : {self._num_doors}"
+class bike(vehicle):
+    def __init__(self, make, model, pedals):
+        super().__init__(make, model)
+        self._pedals=pedals
+    def describe(self):
+        return f"bike make : {self.make} , bike model: {self.model} , bike pedals: {self._pedals}"
+car=car("toyota","hyllux",4)
+bike= bike("mountain", " felix", 2)
+print(car.describe())
+print(bike.describe())
